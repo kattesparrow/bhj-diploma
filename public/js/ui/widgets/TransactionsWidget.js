@@ -11,8 +11,14 @@ class TransactionsWidget {
    * Если переданный элемент не существует,
    * необходимо выкинуть ошибку.
    * */
-  constructor( element ) {
 
+   constructor( element ) {
+    if (!element) {
+			throw new Error('Элемент не задан');
+		} else {
+     this.element = element;
+		 this.registerEvents();
+    }
   }
   /**
    * Регистрирует обработчики нажатия на
@@ -20,7 +26,17 @@ class TransactionsWidget {
    * При нажатии вызывает Modal.open() для
    * экземпляра окна
    * */
+  
   registerEvents() {
+    document.querySelector('.create-income-button').onclick = e => {
+      e.preventDefault();
+      App.getModal('newIncome').open();
+    }
 
+    document.querySelector('.create-expense-button').onclick = e => {
+      e.preventDefault();
+      App.getModal('newExpense').open();
+    }
   }
 }
+
