@@ -15,9 +15,10 @@ class Entity {
     createRequest ({
       url: this.URL,
       method: 'GET',
-      data,    
+      data,  
+      responseType: 'json',  
       callback
-    })
+    });
   }
 
   /**
@@ -31,8 +32,9 @@ class Entity {
       url: this.URL,
       method: 'PUT',
       data,    
+      responseType: 'json',
       callback
-    })
+    });
   }
 
   /**
@@ -46,6 +48,8 @@ class Entity {
       method: 'DELETE',
       data,    
       callback
-    })
+    });
   }
 }
+
+Entity.URL = '';
