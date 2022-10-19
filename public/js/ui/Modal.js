@@ -34,8 +34,7 @@ class Modal {
       this.onClose(event);
       }
     });
-    
-    }
+  }
   
 
   /**

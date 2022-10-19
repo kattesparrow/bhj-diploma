@@ -16,9 +16,10 @@ class TransactionsPage  {
   constructor( element ) {
     if (!element) {
 			throw new Error('Элемент не задан');
-		}
+		} else {
 		this.element = element;
 		this.registerEvents();
+    }
   }
 
   /**
@@ -36,24 +37,18 @@ class TransactionsPage  {
    * */
 
   registerEvents() {
-    try {
-      this.element.querySelector('.remove-account').onclick  = e =>           //удаление счёта
-      this.removeAccount();
+    const removeAccountButton = this.element.querySelector(".remove-account");
 
-      document.querySelectorAll('.content').forEach(element => {              //удаление транзакции
-          element.addEventListener('click', () => {
-            if(event.target.closest('.transaction__remove')) {
-                let idDellTransaction = event.target.closest('.transaction__remove').dataset.id;
-                event.preventDefault();
-                this.removeTransaction(idDellTransaction);
-            } 
-          })
-      })
-    }
-    catch {
-      alert(errorGetElement);
-    }
-    
+		removeAccountButton.addEventListener("click", () => {
+			this.removeAccount();
+		});
+
+		this.element.addEventListener("click", event => {
+			if (event.target.closest(".transaction__remove")) {
+				let id = event.target.closest(".transaction__remove").dataset.id;
+				this.removeTransaction(id);
+			}
+		});
   }
 
   /**  
@@ -70,7 +65,7 @@ class TransactionsPage  {
     if (!this.lastOptions) {
 			return
 		}
-		if (!confirm('Вы действительно хотите удалить счет?')) {
+		if (!confirm("Вы действительно хотите удалить счет?")) {
 			return
 		}
     const accData = {id : this.lastOptions.account_id};
@@ -93,9 +88,9 @@ class TransactionsPage  {
    * */
 
   removeTransaction( id ) {
-    if(confirm('Вы хотите удалить транзакцию?')) {
-        Transaction.remove({id: id},(err,response) => {
-            if(response && response.success) {
+    if(confirm('Вы действительно хотите удалить транзакцию?')) {
+        Transaction.remove({id: id},(err,resp) => {
+            if(resp && resp.success) {
                 App.update();
             }
          })
@@ -109,22 +104,26 @@ class TransactionsPage  {
    * в TransactionsPage.renderTransactions()
    * */
 
-  render(options){
-    if(options) {
-        this.lastOptions = options;
-  
-        Account.get(options.account_id, (err, response) => {        //получит название счета и отобразит
-            if(response) {
-              this.renderTitle(response.data.name); 
-            }       
-        }) 
+   render(options){
+    if (!options) {
+			return;
+		}
+		if (!options.account_id) {
+			return;
+		}
+		this.lastOptions = options;
 
-        Transaction.list(options,(err, response) => {               // получит список транзакций и передаст
-            if(response) {
-                this.renderTransactions(response.data);
-            }
-        })
-    }
+		Account.get(options.account_id, (err, resp) => {
+			if (resp) {
+				this.renderTitle(resp.data.name);
+			}
+		});
+
+		Transaction.list(options, (err, resp) => {
+			if (resp) {
+				this.renderTransactions(resp.data);
+			}
+		});
   }
 
   /**
@@ -132,16 +131,19 @@ class TransactionsPage  {
    * TransactionsPage.renderTransactions() с пустым массивом.
    * Устанавливает заголовок: «Название счёта»
    * */
-  clear() {
-      this.renderTransactions([]);
-      document.querySelector('.content-title').textContent = 'Название счёта';
+   clear() {
+    this.renderTransactions([]);
+		this.renderTitle('Название счета');
+    // document.querySelector('.content-title').textContent = 'Название счета';
+		this.lastOptions = null;
   }
 
   /**
    * Устанавливает заголовок в элемент .content-title
    * */
   renderTitle(name){
-    document.querySelector('.content-title').textContent = name;
+    // document.querySelector('.content-title').textContent = name;
+    this.element.querySelector('.content-title').textContent = name;
   }
 
   /**
@@ -199,7 +201,7 @@ class TransactionsPage  {
                       <i class="fa fa-trash"></i>  
                     </button>
                 </div>
-            </div>`     //<span class="currency">&#x20bd</span>
+            </div>`    
     }
   }
 

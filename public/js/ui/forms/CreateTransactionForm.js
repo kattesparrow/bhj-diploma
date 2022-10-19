@@ -18,11 +18,11 @@ class CreateTransactionForm extends AsyncForm {
    * */
   
   renderAccountsList() {
-    const accountsSelectList = this.element.querySelector(".accounts-select");
+    const accountsSelectList = this.element.querySelector('.accounts-select');
 
 		Account.list(User.current(), (err, response) => {
 			if (response && response.success) {
-				accountsSelectList.innerHTML = "";
+				accountsSelectList.innerHTML = '';
 				response.data.forEach((item) => {
 					accountsSelectList.innerHTML += `<option value="${item.id}">${item.name}</option>`;
 				})
@@ -32,8 +32,6 @@ class CreateTransactionForm extends AsyncForm {
 		});
   }
  
-
-
   /**
    * Создаёт новую транзакцию (доход или расход)
    * с помощью Transaction.create. По успешному результату

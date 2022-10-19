@@ -7,16 +7,10 @@
       "id": "1"
     },
     {
-      "name": "Воробьева Екатерина Анатольевна",
-      "email": "cat.vorobyova2011@yandex.ru",
+      "name": "t3",
+      "email": "t3@ya.ru",
       "password": "123",
-      "id": "txottbakl8nado1p"
-    },
-    {
-      "name": "Алексей",
-      "email": "alexb@inbox.ru",
-      "password": "1234",
-      "id": "txott3m0l8xh1ffo"
+      "id": "txott7tkl97et4q9"
     }
   ],
   "accounts": [
@@ -36,29 +30,9 @@
       "id": "3"
     },
     {
-      "name": "Наличные",
-      "user_id": "txottbakl8nado1p",
-      "id": "txotta48l8nae3m7"
-    },
-    {
-      "name": "ВТБ",
-      "user_id": "txottbakl8nado1p",
-      "id": "txottb2kl8upjchq"
-    },
-    {
-      "name": "Сбер",
-      "user_id": "txottbakl8nado1p",
-      "id": "txott41ol8xgquwu"
-    },
-    {
-      "name": "fdg",
-      "user_id": "txott3m0l8xh1ffo",
-      "id": "txott64cl8xh7rj6"
-    },
-    {
-      "name": "rost",
-      "user_id": "txott3m0l8xh1ffo",
-      "id": "txott2x0l8xh92en"
+      "name": "Сбер3",
+      "user_id": "txott7tkl97et4q9",
+      "id": "txottaool97fj5a4"
     }
   ],
   "transactions": [
@@ -198,112 +172,22 @@
       "user_id": "1"
     },
     {
-      "id": "txott60ol8nantwn",
+      "id": "txott7v0l97fjfr0",
       "type": "income",
       "name": "Проект1",
-      "sum": 40000,
-      "account_id": "txotta48l8nae3m7",
-      "user_id": "txottbakl8nado1p",
-      "created_at": "2022-09-29T16:52:14.758Z"
-    },
-    {
-      "id": "txottat4l8naptdg",
-      "type": "expense",
-      "name": "Овощная лавка",
-      "sum": 2200,
-      "account_id": "txotta48l8nae3m7",
-      "user_id": "txottbakl8nado1p",
-      "created_at": "2022-09-29T16:53:47.380Z"
-    },
-    {
-      "id": "txott6iol8upjwxq",
-      "type": "income",
-      "name": "Проект2",
-      "sum": 10000,
-      "account_id": "txottb2kl8upjchq",
-      "user_id": "txottbakl8nado1p",
-      "created_at": "2022-10-04T21:23:29.533Z"
-    },
-    {
-      "id": "txott5rgl8xf0g5m",
-      "type": "income",
-      "name": "продажа",
-      "sum": 1000,
-      "account_id": "txotta48l8nae3m7",
-      "user_id": "txottbakl8nado1p",
-      "created_at": "2022-10-06T18:51:43.689Z"
-    },
-    {
-      "id": "txott5o8l8xf4lik",
-      "type": "expense",
-      "name": "Аптека",
-      "sum": 2000,
-      "account_id": "txotta48l8nae3m7",
-      "user_id": "txottbakl8nado1p",
-      "created_at": "2022-10-06T18:54:57.259Z"
-    },
-    {
-      "id": "txott904l8xfxu4a",
-      "type": "expense",
-      "name": "Сумка",
-      "sum": 5000,
-      "account_id": "txottb2kl8upjchq",
-      "user_id": "txottbakl8nado1p",
-      "created_at": "2022-10-06T19:17:41.433Z"
-    },
-    {
-      "id": "txott8y4l8xgqf1b",
-      "type": "expense",
-      "name": "Игрушка",
-      "sum": 1000,
-      "account_id": "txottb2kl8upjchq",
-      "user_id": "txottbakl8nado1p",
-      "created_at": "2022-10-06T19:39:54.910Z"
-    },
-    {
-      "id": "txott2owl8xgr4rs",
-      "type": "income",
-      "name": "Проект4",
       "sum": 50000,
-      "account_id": "txott41ol8xgquwu",
-      "user_id": "txottbakl8nado1p",
-      "created_at": "2022-10-06T19:40:28.263Z"
+      "account_id": "txottaool97fj5a4",
+      "user_id": "txott7tkl97et4q9",
+      "created_at": "2022-10-13T19:04:11.387Z"
     },
     {
-      "id": "txott4s0l8xhcwbk",
-      "type": "income",
-      "name": "rost1",
-      "sum": 30000,
-      "account_id": "txott64cl8xh7rj6",
-      "user_id": "txott3m0l8xh1ffo",
-      "created_at": "2022-10-06T19:57:23.743Z"
-    },
-    {
-      "id": "txott96gl8xhit44",
-      "type": "income",
-      "name": "Проект167",
-      "sum": 500000,
-      "account_id": "txott2x0l8xh92en",
-      "user_id": "txott3m0l8xh1ffo",
-      "created_at": "2022-10-06T20:01:59.523Z"
-    },
-    {
-      "id": "txott9dcl8xhkgus",
-      "type": "income",
-      "name": "Проект1",
-      "sum": 35000,
-      "account_id": "txott2x0l8xh92en",
-      "user_id": "txott3m0l8xh1ffo",
-      "created_at": "2022-10-06T20:03:16.947Z"
-    },
-    {
-      "id": "txott67ol8xhmfjb",
+      "id": "txott6i0l9ee9k1e",
       "type": "expense",
-      "name": "Покупка кровати",
-      "sum": 20000,
-      "account_id": "txott2x0l8xh92en",
-      "user_id": "txott3m0l8xh1ffo",
-      "created_at": "2022-10-06T20:04:48.550Z"
+      "name": "Продукты",
+      "sum": 3000,
+      "account_id": "txottaool97fj5a4",
+      "user_id": "txott7tkl97et4q9",
+      "created_at": "2022-10-18T16:02:54.001Z"
     }
   ]
 }

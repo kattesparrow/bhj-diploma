@@ -17,11 +17,10 @@ class AccountsWidget {
   constructor( element ) {
     if(!element) {
       throw new Error('Элемент не существует'); 
-    } else {
+    } 
       this.element = element;
       this.registerEvents();
       this.update();
-    }
   }
 
   /**
@@ -33,17 +32,16 @@ class AccountsWidget {
    * */
 
   registerEvents() {
-        this.element.addEventListener('click', (event) => {
-            if(event.target.className.includes('label-success')) {
-                App.getModal('createAccount').open();
-            }
-            if(event.target.closest('.account')) {
-                event.preventDefault();
-                 this.onSelectAccount(event.target.closest('.account'));
-          } 
-        });
-    }
-
+    this.element.addEventListener('click', (event) => {
+      if(event.target.className.includes('label-success')) {
+        App.getModal('createAccount').open();
+      }
+      if(event.target.closest('.account')) {
+        event.preventDefault();
+          this.onSelectAccount(event.target.closest('.account'));
+      } 
+    });
+  }
 
   /**
    * Метод доступен только авторизованным пользователям
@@ -58,10 +56,10 @@ class AccountsWidget {
 
   update() {
     if(User.current()) {         
-      Account.list(null,(err, response) => {
-        if (response && response.success) {
+      Account.list(null,(err, resp) => {
+        if (resp && resp.success) {
           this.clear();
-          response.data.forEach(item => this.renderItem(item));
+          resp.data.forEach(item => this.renderItem(item));
         }
       })
     }
